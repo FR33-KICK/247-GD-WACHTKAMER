@@ -20,7 +20,11 @@ client.on("ready", () => {
                 play(connection)
             })
         }
-
+// Set the client user's activity
+client.user.setActivity('youtube.com/GwnDaan', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+  .catch(console.error);
+  
         play(connection)
     })
 })
