@@ -21,7 +21,7 @@ client.on("ready", () => {
             })
         }
 // Set the client user's activity
-client.user.setActivity('instagram.com/_gwndaan_', { type: 'WATCHING' })
+client.user.setActivity('youtube.com/GwnDaan', { type: 'WATCHING' })
   .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
   .catch(console.error);
   
