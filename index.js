@@ -21,13 +21,12 @@ client.on("ready", () => {
             })
         }
 // Set the client user's activity
-client.user.setActivity(youtube.com/GwnDaan[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
-    setInterval(() => {
-        client.user.setActivity(instagram.com/GwnDaan[Math.floor(Math.random() * (actvs.length - 1) + 1)]);
-    }, 10000);
+client.user.setActivity('youtube.com/GwnDaan', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+  .catch(console.error);
+  
+        play(connection)
     })
 })
 
 client.login(process.env.token)
-
-Z
