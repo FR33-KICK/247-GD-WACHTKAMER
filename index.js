@@ -9,10 +9,6 @@ const client = new Discord.Client()
 
 
 client.on("ready", () => {
-        setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-        client.user.setActivity(activities_list[index], { type: 'WATCHING' }); // sets bot's activities to one of the phrases in the arraylist.
-    }, 10000); // Runs this every 10 seconds.
     console.log(`Logged in as ${client.user.tag}`)
     const voiceChannel = client.channels.cache.get(channel_id)
     voiceChannel.join().then(connection => {
@@ -24,6 +20,12 @@ client.on("ready", () => {
                 play(connection)
             })
         }
+// Set the client user's activity
+client.user.setActivity('youtube.com/GwnDaan', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+  .catch(console.error);
+  
+        play(connection)
     })
 })
 
