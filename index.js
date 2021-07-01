@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const ytdl = require("ytdl-core")
 const config = require("./config.json");
+const token = (config.token);
 const {
     token,
     channel_id,
